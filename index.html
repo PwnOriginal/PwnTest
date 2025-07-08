@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pwn Wi-Fi Security Check</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #f3f3f3;
+            font-family: 'Fira Mono', monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: rgba(30, 32, 34, 0.98);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 36px 32px 32px 32px;
+            border: 2px solid #6ee7b7;
+        }
+        h1, h2 {
+            font-family: 'Fira Mono', monospace;
+            color: #6ee7b7;
+            margin-top: 0;
+        }
+        .ascii {
+            font-size: 2.2rem;
+            color: #fbbf24;
+            margin-bottom: 0.5em;
+        }
+        ul, ol {
+            margin-left: 1.5em;
+        }
+        .section {
+            margin-bottom: 2em;
+        }
+        .emote {
+            font-size: 1.3em;
+            color: #fbbf24;
+            margin-right: 0.3em;
+        }
+        .cta {
+            background: #6ee7b7;
+            color: #232526;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 32px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 1.5em;
+            transition: background 0.2s;
+        }
+        .cta:hover {
+            background: #34d399;
+        }
+        .footer {
+            text-align: center;
+            color: #a1a1aa;
+            font-size: 0.95em;
+            margin-top: 2em;
+        }
+        .pwnagotchi {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            margin-bottom: 2em;
+        }
+        .pwnagotchi-art {
+            font-size: 2.5em;
+            line-height: 1;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 18px 6px; }
+            .pwnagotchi-art { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pwnagotchi">
+            <div class="pwnagotchi-art">(◕‿◕✿)</div>
+            <h1>Pwnagotchi Wi-Fi Security Check</h1>
+        </div>
+        <div class="section">
+            <div class="ascii">(っ＾▿＾) Is Your Wi-Fi Secure?</div>
+            <p>Let's Find Out Together!<br>
+            Our Wi-Fi Security Check is a practical, easy way to understand the safety of your network. We don’t just scratch the surface; we perform a thorough check so you can feel confident about your Wi-Fi. <span class="emote">( ◕‿◕)</span></p>
+        </div>
+        <div class="section">
+            <h2>What We Do</h2>
+            <ol>
+                <li><b>Scan & Check</b><br>
+                    Using trusted tools, we perform a detailed scan of your network, identifying any weak spots that could leave you exposed. <span class="emote">(◕‿‿◕)</span>
+                </li>
+                <li><b>Clear, Simple Report</b><br>
+                    You’ll get a no-nonsense report with a straightforward security rating that shows if your network is secure or needs attention. <span class="emote">(⌐■_■)</span>
+                </li>
+                <li><b>Actionable Tips</b><br>
+                    We provide customised, easy-to-follow tips to fix any issues we find, helping you strengthen your network’s defences quickly and effectively. <span class="emote">(ᵔ◡◡ᵔ)</span>
+                </li>
+            </ol>
+        </div>
+        <div class="section">
+            <h2>What You’ll Receive</h2>
+            <ul>
+                <li><b>Security Rating</b><br>
+                    We’ll give you a clear rating—either "Safe" or "Needs Attention"—so you know exactly where you stand. <span class="emote">(♥‿‿♥)</span>
+                </li>
+                <li><b>Honest, Transparent Feedback</b><br>
+                    Our goal is to keep things real. We won’t use scare tactics, just an honest look at any potential risks in your network. <span class="emote">(°▃▃°)</span>
+                </li>
+                <li><b>Tailored Solutions</b><br>
+                    We focus on real, practical fixes that directly address any issues we find. No vague advice—just straightforward solutions. <span class="emote">(╥☁╥)</span>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>How Does It Work?</h2>
+            <p>We use a special device (Pwnagotchi) to test your Wi-Fi security. Here’s what happens:</p>
+            <ol>
+                <li>We temporarily disconnect a device from your network to trigger a "handshake"—a special moment when your device and Wi-Fi exchange security info.</li>
+                <li>Our device captures this handshake and saves it as a file (a <b>pcap</b>).</li>
+                <li>We try to decrypt the handshake. If we succeed, your Wi-Fi password is weak and needs attention. If not, your network is strong!</li>
+            </ol>
+            <p>All testing is done with your permission and no data is ever shared. <span class="emote">( ˘ ³˘)♥</span></p>
+        </div>
+        <div class="section">
+            <h2>How Do We Know If Your Wi-Fi Is Secure?</h2>
+            <p>We use a special device called a <b>Pwnagotchi</b> to test your Wi-Fi security. Here’s how it works:</p>
+            <ol>
+                <li><b>Handshake Capture:</b> We temporarily disconnect a device from your Wi-Fi (with your permission). When it reconnects, your network and device exchange a special security packet called a "handshake." Our device captures this handshake file.</li>
+                <li><b>Password Test:</b> We try to decrypt the handshake using advanced tools. If we can crack the password, it means your Wi-Fi is <b>not secure</b> and needs a stronger password. If we can’t, your network is <b>secure</b> against common attacks!</li>
+                <li><b>Clear Results:</b> You get a simple report: <span style="color:#6ee7b7;">Safe</span> or <span style="color:#fbbf24;">Needs Attention</span>. We’ll also give you tips to improve your security if needed.</li>
+            </ol>
+            <p>We never keep or share your data. The test is quick, safe, and only checks your Wi-Fi password strength—nothing else!</p>
+        </div>
+        <div style="text-align:center;">
+            <button class="cta" onclick="window.location.href='mailto:PwnWifiTest@gmail.com'">Do you want to test your Wi-Fi?</button>
+        </div>
+        <div class="footer">
+            <p>Pwn Test &copy; 2025</p>
+        </div>
+    </div>
+</body>
+</html>
